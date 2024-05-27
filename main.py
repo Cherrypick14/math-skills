@@ -10,7 +10,7 @@ def read_data(file_path):
         if os.path.getsize(file_path) == 0:
            raise ValueError("f Error: The file {file_path} is empty}")
         
-        with os.open(file_path,'r') as file:
+        with open(file_path,'r') as file:
             data = [int(line.strip()) for line in file]
            
         return data 
