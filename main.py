@@ -41,7 +41,10 @@ def calculate_median(data):
 def calculate_variance(data):
     average = calculate_average(data)
    # variance = Σ(x - μ)^2 / N
-    return sum((x - average) ** 2 for x in data) / len(data)
+    squared_difference = sum((x - average) ** 2 for x in data)
+    n = len(data)
+    variance = squared_difference / (n-1)
+    return  variance
 
 def calculate_standard_deviation(data):
    variance = calculate_variance(data)
